@@ -9,16 +9,15 @@ galaxy_info:
   namespace: leberkaslabs
   role_name: filesystem
 
-  # platforms:
-  # - name: Fedora
-  #   versions:
-  #   - all
-  #   - 25
-  # - name: SomePlatform
-  #   versions:
-  #   - all
-  #   - 1.0
-  #   - 7
-  #   - 99.99
+  platforms:
+    - name: Debian
+      versions:
+        - bookworm
+        - trixie
+    - name: EL
+      versions:
+        - "9"
+        - "8"
+        - "10"
 
   galaxy_tags: []
