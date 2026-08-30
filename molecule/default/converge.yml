@@ -17,6 +17,4 @@
           - dev: molecule01
             fstype: ext4
           - dev: molecule02
-            fstype: xfs
-          - dev: molecule03
-            state: absent
+            fstype: ext3
