@@ -1,0 +1,18 @@
+---
+- name: Ensure requirements are installed
+  ansible.builtin.package:
+    name: "{{ filesystem_requirements }}"
+    state: present
+  when: filesystem_requirements | length > 0
+
+- name: Manage filesystems
+  community.general.filesystem:
+    dev: "{{ item.dev }}"
+    force: "{{ item.force | default(omit) }}"
+    fstype: "{{ item.fstype | default(filesystem_default_filesystem) }}"
+    opts: "{{ item.opts | default(omit) }}"
+    resizefs: "{{ item.resizefs | default(omit) }}"
+    state: "{{ item.state | default(omit) }}"
+  loop: "{{ filesystem_list }}"
+  loop_control:
+    label: "{{ item.dev }}"

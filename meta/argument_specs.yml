@@ -1,0 +1,42 @@
+---
+argument_specs:
+  main:
+    author: Niclas Spreng
+    description: Manage filesystems.
+    short_description: filesystem
+    options:
+      filesystem_list:
+        type: list
+        elements: dict
+        required: false
+        description: List of filesystems to be created.
+        options:
+          dev:
+            type: str
+            required: true
+            description: Target path to block device or regular file.
+          force:
+            type: bool
+            required: false
+            description: Create new filesystem on devices that already has filesystem.
+          fstype:
+            type: str
+            required: false
+            description: Filesystem type to be created.
+          opts:
+            type: str
+            required: false
+            description: List of options to be passed.
+          state:
+            type: str
+            required: false
+            description: State the filesystem.
+      filesystem_requirements:
+        type: list
+        elements: str
+        required: false
+        description: List of packages required for filesystems.
+      filesystem_default_filesystem:
+        type: str
+        required: true
+        description: Default filesystem used if not set per item.

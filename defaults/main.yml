@@ -1,0 +1,14 @@
+---
+filesystem_list: []
+  # - dev: /dev/sdb1
+  # - dev: /dev/sdb2
+  #   fstype: ext4
+
+# Packages required for filesystem configuration
+filesystem_requirements:
+  - e2fsprogs   # ext2/ext3/ext4 filesystem tools
+  - util-linux  # blkid and blockdev utilities
+  - xfsprogs    # XFS filesystem tools
+
+# Default filesystem used if not configured
+filesystem_default_filesystem: xfs
